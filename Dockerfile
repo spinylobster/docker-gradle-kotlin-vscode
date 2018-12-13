@@ -10,9 +10,9 @@ RUN yum -y update && yum clean all && yum -y install \
 # refer: https://github.com/keeganwitt/docker-gradle/blob/1718fa65873e24d1e003dcd3828755e9fd39fa9d/jdk11-slim/Dockerfile
 
 ENV GRADLE_HOME /opt/gradle
-ENV GRADLE_VERSION 5.0-rc-3
+ENV GRADLE_VERSION 5.0
 
-ARG GRADLE_DOWNLOAD_SHA256=684a20ad90fc0d133c7b03da392c21e2a211b5df32faacb9f72e6847628aea20
+ARG GRADLE_DOWNLOAD_SHA256=6157ac9f3410bc63644625b3b3e9e96c963afd7910ae0697792db57813ee79a6
 RUN set -o errexit -o nounset \
 	&& echo "Downloading Gradle" \
 	&& wget --no-verbose --output-document=gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" \
